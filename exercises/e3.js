@@ -5,7 +5,11 @@
 
 export function getAverage(array) {
   // Your code goes here...
-
+	let total = 0;
+	for(const elm of array) {
+		total += elm;
+	}
+	return total / array.length;
 }
 
 

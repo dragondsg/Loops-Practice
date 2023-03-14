@@ -7,7 +7,17 @@
 
 export function flatArrays(array) {
   // Your code goes here...
-
+	let result = [];
+	for (let sub of array) {
+		if (Array.isArray(sub)) {
+			for (let elm of sub) {
+				result.push(elm);
+			}
+		} else {
+			result.push(sub);
+		}
+	}
+	return result;
 }
 
 

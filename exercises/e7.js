@@ -5,7 +5,13 @@
 
 export function getClientWithLeastBalance(array) {
   // Your code goes here...
-
+	let result = array[0];
+	for(const holder of array) {
+		if(result.balance === 0 || holder.balance !== 0 && holder.balance < result.balance) {
+			result = holder;
+		}
+	}
+	return [result]; // Apperently it want this inside an array. I don't know why you'd make an array that only ever holds 1 object.
 }
 
 // === TEST YOURSELF ===

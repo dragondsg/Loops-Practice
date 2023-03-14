@@ -5,7 +5,20 @@
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-
+	let result = [];
+	let nameHasLetter = false;
+	for(const holder of array) { // Is const or let better for for-of loops? They both seem to work the same way.
+		for(let l = 0; l < holder.name.length; l++) {
+			if(holder.name[l].toLowerCase() === letter.toLowerCase()) {
+				nameHasLetter = true;
+			}
+		}
+		if(nameHasLetter) {
+			result.push(holder.name);
+			nameHasLetter = false;
+		}
+	}
+	return result;
 }
 
 // === TEST YOURSELF ===
